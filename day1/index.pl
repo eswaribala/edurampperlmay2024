@@ -1,6 +1,6 @@
 use DateTime;
 use strict;
-#use DateTime::Format::Duration;
+use DateTime::Format::Duration;
 #Health care home page
 #Parameswari Bala
 #31-May-2024
@@ -37,6 +37,8 @@ print "First Name=$first_name \t Last_name=$last_name\n";
 $converted_amount = $converted_amount + 500; 
 printf "FirstName=%s \t Salary=%d \t Current Time=%s\n",$first_name,$converted_amount,$current_time;
 $currentdatetime=DateTime->now;
+$currentdatetime->set_time_zone('Asia/Kolkata');
+ 
 print "Current Date Time= $currentdatetime \n";
 print `ls -l`;
 print "Enter DOB  year";
