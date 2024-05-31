@@ -1,5 +1,6 @@
 use DateTime;
 use strict;
+#use DateTime::Format::Duration;
 #Health care home page
 #Parameswari Bala
 #31-May-2024
@@ -65,3 +66,9 @@ $case_id = \$patient_id;
 $$case_id=1050;
 print "Case Id = $patient_id";
 print "Case Id = $$case_id";
+
+#sprintf
+my $formatted_medicine;
+
+$formatted_medicine=sprintf("The medicine %s to be given %9.2f","Dola",678900);
+print "$formatted_medicine";
