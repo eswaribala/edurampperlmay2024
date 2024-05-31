@@ -1,5 +1,5 @@
-
-#use DateTime;
+use DateTime;
+use strict;
 #Health care home page
 #Parameswari Bala
 #31-May-2024
@@ -12,6 +12,17 @@ print "Training started\n";
 print "Go beyond\n";
 #print patient information
 
+#declare variables
+my $first_name; #file scope
+my $last_name;
+my $salary;
+my $converted_amount;
+my $current_time;
+my $year;
+my $month;
+my $day;
+my $currentdatetime;
+my $dob;
 #scalar type
 print "Enter Your First Name";
 chomp($first_name=<STDIN>);
@@ -24,7 +35,33 @@ $current_time=localtime();
 print "First Name=$first_name \t Last_name=$last_name\n";
 $converted_amount = $converted_amount + 500; 
 printf "FirstName=%s \t Salary=%d \t Current Time=%s\n",$first_name,$converted_amount,$current_time;
-#$currentdatetime=DateTime->now;
-#print "Current Date Time=$currentdatetime\n"
-print `ls -l`
+$currentdatetime=DateTime->now;
+print "Current Date Time= $currentdatetime \n";
+print `ls -l`;
+print "Enter DOB  year";
+chomp($year=int<STDIN>);
+print "Enter Month";
+chomp($month=int<STDIN>);
+print "Enter Day";
+chomp($day=int<STDIN>);
 
+
+$dob = DateTime->new (
+
+day => $day,
+month => $month,
+year => $year
+
+);
+
+print "DOB = $dob"; 
+
+
+#symbolic reference
+my $patient_id;
+my $case_id;
+$patient_id = 1001;
+$case_id = \$patient_id;
+$$case_id=1050;
+print "Case Id = $patient_id";
+print "Case Id = $$case_id";
