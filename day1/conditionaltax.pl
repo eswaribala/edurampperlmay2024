@@ -8,7 +8,7 @@ my $length;
 
 #array 
 @medicine_types=("imported","local");
-$length=@medicine_types;
+$length= scalar @medicine_types;
 printf "Length=%d",$length;
 $medicine_cost=int(rand(500))+500;
 $selected_medicine=rand($length);

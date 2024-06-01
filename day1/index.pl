@@ -57,7 +57,17 @@ year => $year
 
 );
 
-print "DOB = $dob"; 
+print "DOB = $dob\n"; 
+
+
+
+my $duration = $currentdatetime - $dob;
+my $dfd = DateTime::Format::Duration->new(
+        pattern => '%Y years, %m months, %e days, %H hours, %M minutes, %S seconds', normalise => 1
+);
+print  $dfd->format_duration($duration);
+
+
 
 
 #symbolic reference
