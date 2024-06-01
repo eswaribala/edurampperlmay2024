@@ -7,8 +7,8 @@ print "Content-type: text/html \n\n";
 # CONFIG VARIABLES
 $platform = "mysql";
 $database = "edupatientdb";
-$host = "172.17.0.2";
-$port = "3306";
+$host = "127.0.0.1";
+$port = "3308";
 $tablename = "patient";
 $user = "root";
 $pw = "password";
