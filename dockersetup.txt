@@ -5,3 +5,7 @@ sudo apt-get install -y docker.io
   docker -v
 
 sudo usermod -aG docker $USER
+
+#check container
+docker container ls -a
+
