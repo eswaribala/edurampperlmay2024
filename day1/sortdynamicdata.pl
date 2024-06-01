@@ -25,10 +25,28 @@ print @names;
 print "\n";
 #print sorted names
 
+#create subroutine
+
+sub asc_order{
+   
+   #$a cmp $b;#string
+   $a <=> $b;
+
+}
+
+
 my @sortednames;
-@sortednames = sort(@names);
+@sortednames = sort asc_order(@names);
 
 print "Names after Sorting....\n";
 
 print @sortednames;
+print "\n";
+
+#reverse order
+my @reverseddata= reverse(@sortednames);
+
+print "data in reverse order";
+
+print @reverseddata;
 print "\n";
