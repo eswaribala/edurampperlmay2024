@@ -9,3 +9,7 @@ sudo usermod -aG docker $USER
 #check container
 docker container ls -a
 
+docker run --name eduramp-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=edupatientdb -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
+
+
+
