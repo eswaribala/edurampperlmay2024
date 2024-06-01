@@ -14,6 +14,6 @@ docker run --name eduramp-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABAS
 docker exec -it eduramp-mysql mysql -u root -p
 #access / show databases
 show databases;
-
+create table patient(patient_id bigint auto_increment, first_name varchar(50), last_name varchar(50), dob date, contact_no bigint, history varchar(500), blood_group varchar(3), primary key(patient_id));
 
 
