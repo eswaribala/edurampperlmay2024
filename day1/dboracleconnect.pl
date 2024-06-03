@@ -1,26 +1,26 @@
 use DBI;
-use DBD::mysql
+#use DBD::mysql
 
 # HTTP HEADER
 #print "Content-type: text/html \n\n";
 
 # CONFIG VARIABLES
-$platform = "mysql";
-$database = "edupatientdb";
+$platform = "oracle";
+$database = "xe";
 $host = "172.17.0.2";
-$port = "3306";
+$port = "1521";
 $tablename = "patient";
-$user = "root";
+$user = "system";
 $pw = "password";
 
 #DATA SOURCE NAME
-$dsn = "dbi:mysql:$database:$host:$port";
+#$dsn = "dbi:mysql:$database:$host:$port";
 
 # PERL DBI CONNECT
 #$DBIconnect = DBI->connect($dsn, $user, $pw);
 # my $DBIConnect = DBI->connect($dsn, $user, $pw, { RaiseError => 1 })
  #   or die $DBI::errstr;
-my $DBIConnect = DBI->connect("DBI:mysql:$database:$host", "$user", "$pw");
+my $DBIConnect =  DBI->connect('dbi:Oracle:XE','system','password');
 $sth = $DBIConnect->prepare("select * from patient");
 $sth->execute();
 while ( @row = $sth->fetchrow_array )
