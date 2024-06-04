@@ -39,13 +39,12 @@ while (my $line = <$data_file>)
     # Parsing the line
     if ($csv->parse($line))
     {
-
         # Extracting elements
         my @words = $csv->fields();
      for (my $i = 0; $i <= 3; $i++)
         {
             print "$words[$i] ";
-
+            push(@rec,$words[$i]);
         }
 
      $sth->execute($words[0],$words[1],int($words[2]),int($words[3]));
@@ -57,3 +56,6 @@ while (my $line = <$data_file>)
         warn "Line could not be parsed: $line\n";
     }
 }
+
+
+print @rec;
