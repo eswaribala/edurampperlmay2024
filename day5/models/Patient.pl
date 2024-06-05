@@ -43,4 +43,20 @@ sub setBloodGroup {
     return $self;
 }
 
+sub login {
+
+    my (@data)=@_;
+
+    print @data;
+
+    if ($data[2] eq "Surgeon"){
+        print "Sub class Identified as Doctor";
+    }
+    else
+    {
+        print "Sub class Identified as Patient";
+    }
+
+}
+
 1;

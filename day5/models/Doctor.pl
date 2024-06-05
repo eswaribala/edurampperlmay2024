@@ -1,19 +1,19 @@
 package Doctor;
 use strict;
 use warnings;
-
+use parent 'Person';
 sub new
 {
 
  my $class=shift;
+ my @side=@_;
+ my $self=$class->SUPER::new($side[0],$side[1],$side[2],$side[3]);
 
- my $self={
-  _id=>shift,
-  _name=>shift,
-  _qualification=>shift,
-  _dob=>shift
+ $self->{_qualification}=$side[4];
+ 
+ $self->{_specialization}=$side[5];
 
-};
+
 
 bless $self,$class;
 
@@ -21,30 +21,7 @@ return $self;
 
 
 }
-# Accessor method to get the id of the person
-sub getId {
-    my ($self) = @_;
-    return $self->{_id};
-}
 
-# Mutator  method to set the id of the person
-sub setId {
-    my ($self, $id) = @_;
-    $self->{_id} = $id if defined($id);
-    
-}
-# Accessor method to get the name of the person
-sub getName {
-    my ($self) = @_;
-    return $self->{_name};
-}
-
-# Mutator  method to set the name of the person
-sub setName {
-    my ($self, $name) = @_;
-    $self->{_name} = $name if defined($name);
-    
-}
 # Accessor method to get the qualification of the person
 sub getQualification {
     my ($self) = @_;
@@ -59,15 +36,15 @@ sub setQualification {
 }
 
 # Accessor method to get the dob of the person
-sub getDOB {
+sub getSpecialization {
     my ($self) = @_;
-    return $self->{_dob};
+    return $self->{_specialization};
 }
 
 # Mutator  method to set the dob of the person
-sub setDOB {
-    my ($self, $dob) = @_;
-    $self->{_dob} = $dob if defined($dob);
+sub setSpecialization {
+    my ($self, $specialization) = @_;
+    $self->{_specialization} = $specialization if defined($specialization);
     
 }
 

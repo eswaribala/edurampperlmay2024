@@ -62,5 +62,21 @@ sub setContactNo {
     return $self;
 }
 
+sub login {
+ 
+  my (@data)=@_;
+
+  print @data;
+  
+  if ($data[2] eq "Surgeon"){
+      print "Identified as Doctor";
+}
+  else
+       {
+     print "Identified as Patient";
+} 
+
+}
+
 
 1;

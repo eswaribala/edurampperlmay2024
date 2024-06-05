@@ -1,17 +1,22 @@
-#require '../models/Doctor.pl';
+require '../models/Doctor.pl';
 require '../models/Patient.pl';
 #require '../models/Appointment.pl';
 use DateTime;
 
-=begin
-my $obj= new Doctor(23435,'viki','MDS','1970-12-02');
+
+my $obj= new Doctor(23435,'viki','1995-12-07',5056010299,'MDS','Prosthodontics');
 
 #retrieve all
-
-print  $obj->getId() ."\n";
+print $obj->getPersonId() ."\n";
 print $obj->getName() ."\n";
-print $obj->getQualification() ."\n";
 print $obj->getDOB() ."\n";
+print $obj->getContactNo() ."\n";
+
+print $obj->getQualification() ."\n";
+print $obj->getSpecialization() ."\n";
+
+$obj->login(22648764,'1995-12-02','Surgeon');
+
 
 #setter
 
@@ -20,7 +25,6 @@ print $obj->getDOB() ."\n";
 $obj->setQualification('PhD');
 
 print $obj->getQualification() ."\n";
-=cut
 
 #create patient object
 
@@ -31,6 +35,8 @@ print $patientObj->getDOB() ."\n";
 print $patientObj->getContactNo() ."\n";
 print $patientObj->getHistory() ."\n";
 print $patientObj->getBloodGroup() ."\n";
+$patientObj->login(43956943,'1970-12-02','Surgeon');
+
 =begin
 #create appointment object
 #default constructor
