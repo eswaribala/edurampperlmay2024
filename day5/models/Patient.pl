@@ -4,17 +4,18 @@ use warnings;
 #inheritance
 use  parent 'Person';
 #create constructor
-
+#my $self;
+#my $class;
 sub new
 {
 
-  my $class=shift;
+  my  $class=shift;
+  my @side=@_;  
+  my $self=$class->SUPER::new($side[0],$side[1],$side[2],$side[3]); 
+   $self->{ _history}=$side[4];
+   $self->{ _bloodgroup}=$side[5];
 
-  my $self={
-     _history=>shift,
-     _bloodgroup=>shift
-
-  };   
+     
 
   bless $self,$class;
  
@@ -41,6 +42,5 @@ sub setBloodGroup {
     $self->{_bloodgroup} = $new_value if defined $new_value;
     return $self;
 }
-
 
 1;
